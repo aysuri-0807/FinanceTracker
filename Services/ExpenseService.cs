@@ -18,5 +18,17 @@ public class ExpenseService : IExpenseService
         expense.Id = _nextId++; 
         _expenses.Add(expense); 
     }
+
+    public bool Remove(int id)
+    {
+        var expense = _expenses.FirstOrDefault(i => i.Id == id);
+        if (expense is null)
+        {
+            return false;
+        }
+
+        _expenses.Remove(expense);
+        return true;
+    }
         
 }

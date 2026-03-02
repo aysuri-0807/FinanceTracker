@@ -18,4 +18,16 @@ public class IncomeService : IIncomeService
         income.Id = _nextId ++; //Move to next unique ID after adding this to UI 
         _incomes.Add(income); //Add the income to the list 
     }
+
+    public bool Remove(int id)
+    {
+        var income = _incomes.FirstOrDefault(i => i.Id == id);
+        if (income is null)
+        {
+            return false;
+        }
+
+        _incomes.Remove(income);
+        return true;
+    }
 }

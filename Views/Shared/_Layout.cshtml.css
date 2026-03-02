@@ -46,3 +46,21 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.light-mode .footer {
+  background-color: #f8f9fa;
+  color:#000000;
+}
+
+.dark-mode .footer {
+  background-color: #212121;
+  color: #ffffff;
+}
+
+.light-mode .border-top {
+  border-color: #e5e5e5;
+}
+
+.dark-mode .border-top {
+  border-color: #424242;
+}

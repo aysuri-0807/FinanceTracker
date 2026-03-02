@@ -9,4 +9,6 @@ public interface IExpenseService
     ExpenseModel? GetById(int id); 
 
     void Add(ExpenseModel expense); 
+
+    bool Remove(int id);
 }

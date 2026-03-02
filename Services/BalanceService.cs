@@ -14,10 +14,10 @@ public class BalanceService : IBalanceService
         _expenseService = expenseService;
     }
 
-    public BalanceModel GetBalance()
+    public BalanceModel GetBalance(int userId)
     {
-        var totalIncome = _incomeService.GetAll().Sum(i => i.Amount);
-        var totalExpense = _expenseService.GetAll().Sum(e => e.Amount);
+        var totalIncome = _incomeService.GetAll().Where(i => i.UserId == userId).Sum(i => i.Amount);
+        var totalExpense = _expenseService.GetAll().Where(e => e.UserId == userId).Sum(e => e.Amount);
 
         return new BalanceModel
         {

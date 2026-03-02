@@ -5,5 +5,5 @@ namespace FinanceApp.Services;
 
 public interface IBalanceService
 {
-    BalanceModel GetBalance(); 
+    BalanceModel GetBalance(int userId); 
 }
